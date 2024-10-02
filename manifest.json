@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Notificador de Taggeo de Solcre",
+  "version": "1.5",
+  "description": "Recuerda taggear tu actividad y proporciona notificaciones con sonido.",
+  "permissions": [
+    "notifications",
+    "alarms",
+    "storage",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Notificador de Taggeo de Solcre",
+    "default_popup": "options.html"  
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
